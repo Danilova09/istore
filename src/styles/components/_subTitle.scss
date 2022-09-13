@@ -1,0 +1,16 @@
+@import '../components/variables';
+
+.subtitle {
+    max-width: $mainMaxWidht-1140;
+    margin: 0 auto;
+    width: 100%;
+
+    .subtitle-block {
+        a {
+            img {
+                width: 80px;
+                height: 32px;
+            }
+        }
+    }
+}
