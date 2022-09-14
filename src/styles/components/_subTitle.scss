@@ -1,15 +1,91 @@
 @import '../components/variables';
+@import '../mixin';
 
 .subtitle {
     max-width: $mainMaxWidht-1140;
     margin: 0 auto;
     width: 100%;
+    padding: 20px 0;
 
     .subtitle-block {
+        // @include flex(_, space-between);
+    
+        .subtitle-logo {}
+
         a {
             img {
-                width: 80px;
-                height: 32px;
+                @include widthHeight(80px, 32px);
+            }
+        }
+
+        .subtitle-list {
+            @include flex(15px, '');
+
+            &:nth-child(3) span {
+                color: red;
+            }
+
+            li {
+                .subtitle-phone {
+                    color: $mainTextColor;
+                }
+
+                a {
+                    font-size: 0.875rem;
+                    color: $secondTextColor;
+                    line-height: 18px;
+
+                    span {
+                        color: $mainTextColor;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .subtitle-search {
+            @include flex('', center);
+            width: 100%;
+            max-width: 474.48px;
+        
+            img {
+                @include widthHeight(17px, 17px);
+                margin-right: 10px;
+            }
+
+            input {
+                border: none;
+                outline: none;
+                width: 100%;
+                border: 1px solid #8e8e8e;
+                border-radius: 100px;
+                padding: 8px 0 8px 8px;
+    
+
+                &::placeholder {
+                    color: $inputPlaceholderTextColor;
+                    font-size: 0.938rem;
+                }
+
+                &:focus {
+                    border: 1px solid $activeElement;
+                }
+            }
+        }
+
+        .subtitle-cart {
+            position: relative;
+            &::after {
+                content: '2';
+                position: absolute;
+                @include widthHeight(15px, 15px);
+                background: $activeElement;
+                @include flex(_, center);
+                font-size: 8px;
+                color: #fff;
+                right: 0;
+                bottom: 3px;
+                border-radius: 50%;
             }
         }
     }
